@@ -54,7 +54,11 @@ def post():
 
     response = ""
 
-    stock_name = request.json["request"]["intent"]["slots"]["Stock"]["value"]
+    try:
+        stock_name = request.json["request"]["intent"]["slots"]["Stock"]["value"]
+    except TypeError:
+        response = generate_response("Price not found.")
+        return response, 200, CONTENT_TYPE
 
     logging.info("Stock name: %s" % stock_name)
 
