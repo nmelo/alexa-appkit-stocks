@@ -1,0 +1,5 @@
+# This is an implicit value, here for clarity
+--index-url https://pypi.python.org/simple/
+
+requests==1.2.0
+arrow==0.5.4
